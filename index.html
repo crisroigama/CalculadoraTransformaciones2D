@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Calculadora de transformaciones 2D para CSS3">
+		<meta name="keywords" content="HTML5, CSS3, transform, 3D, 2D">
+		<title>Calculadora de transformaciones 2D para CSS3</title>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+	</head>
+	<body>		
+		<h1>Calculadora de transformaciones 2D</h1>
+		
+		<div class="flex-container interactivo">
+			<figure>
+				<img src="maggie.png" alt="maggie">
+				<figcaption>Figura sin transformar</figcaption>
+			</figure>
+			
+			<figure>
+				<img id="img_translate" src="homer.png" alt="homer" style="transform: translateX(40px) translateY(0px);">
+				<figcaption>función translate()</figcaption>
+				<script>
+					function t(){
+						var modif='translateX('+x.value+'px) translateY('+y.value+'px)';
+						img_translate.style.transform=modif;
+						translate.innerHTML='transform: '+modif;
+					}
+				</script>
+
+				<label>X:</label>
+				<input onchange="t();" id="x" type="range" min="-100" max="100" step="5" value="0">
+				<br>
+				<label>Y:</label>
+				<input onchange="t();" id="y" type="range" min="-100" max="100" step="5" value="0">
+				<br>
+				<output id="translate">transform: translateX(40px) translateY(0px)</output>
+		
+			</figure>
+			
+	
+			<figure>
+				<img id="img_rotate" src="marge.png" alt="marge">
+				<figcaption>función rotate()</figcaption>
+				<script>
+					function r(){
+						var modif='rotate('+deg.value+'deg)';
+						img_rotate.style.transform=modif;
+						rotate.innerHTML='transform: '+modif;
+					}
+				</script>
+			
+				<label>ángulo:</label>
+				<input onchange="r();" id="deg" type="range" min="-360" max="360" step="10" value="0">
+				<br>
+				<output id="rotate">transform: rotate(0deg)</output>
+			</figure>
+					
+			<figure>
+				<img id="img_scale" src="bart.png" alt="bart">
+				<figcaption>función scale()</figcaption>
+				<script>
+					function s(){
+						var modif='scaleX('+scax.value+') scaleY('+scay.value+')';
+						img_scale.style.transform=modif;
+						scale.innerHTML='transform: '+modif;
+					}
+				</script>
+
+				<label>X:</label>
+				<input onchange="s();" id="scax" type="range" min="-2" max="2" step="0.1" value="1">
+				<br>
+				<label>Y:</label>
+				<input onchange="s();" id="scay" type="range" min="-2" max="2" step="0.1" value="1">
+				<br>
+				<output id="scale">transform: scaleX(0) scaleY(0)</output>		
+			</figure>
+			
+			<figure>
+				<img id="img_skew" src="lisa.png" alt="lisa">
+				<figcaption>función skew()</figcaption>
+				<script>
+					function sk(){
+						var modif='skewX('+skex.value+'deg) skewY('+skey.value+'deg)';
+						img_skew.style.transform=modif;
+						skew.innerHTML='transform: '+modif;
+					}
+				</script>
+				
+				<label>X:</label>
+				<input onchange="sk();" id="skex" type="range" min="-85" max="85" step="5" value="0">
+				<br>
+				<label>Y:</label>
+				<input onchange="sk();" id="skey" type="range" min="-85" max="85" step="5" value="0">
+				<br>
+				<output id="skew">transform: skewX(0deg) skewY(0deg)</output>
+				
+			</figure>
+		</div>
+		
+ 
+
+</body></html>
